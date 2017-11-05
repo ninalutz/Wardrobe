@@ -7,10 +7,8 @@ void setup() {
 
 void draw(){
   background(255);
-  rotate(-PI/2);
   drawVideo();
   drawLeap();
-  rotate(PI/2);
 }
 
 
