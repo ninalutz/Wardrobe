@@ -14,14 +14,9 @@ import de.voidplus.leapmotion.*;
 
 LeapMotion leap;
 
-void setup() {
-  size(800, 500);
-  background(255);
-  // ...
-
-  leap = new LeapMotion(this);
+void initLeap(){
+   leap = new LeapMotion(this);
 }
-
 
 // ======================================================
 // 1. Callbacks
@@ -43,10 +38,8 @@ void leapOnExit() {
 }
 
 
-void draw() {
-  background(255);
+void drawLeap() {
   // ...
-
   int fps = leap.getFrameRate();
   for (Hand hand : leap.getHands ()) {
 
