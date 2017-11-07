@@ -1,9 +1,8 @@
 import processing.video.*; 
-Capture cam; 
-
 import gab.opencv.*;
 import java.awt.Rectangle;
 
+Capture cam; 
 OpenCV opencv;
 Rectangle[] faces;
 
