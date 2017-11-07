@@ -2,7 +2,7 @@ void setup() {
   size(400, 600, P3D);
   background(255);
   initVideo();
-  TextToSpeech.say("Test voice hello");
+  TextToSpeech.say("Hello I am Prepped", voiceSpeed);
   //initLeap();
 }
 
