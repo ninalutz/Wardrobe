@@ -1,7 +1,8 @@
 void setup() {
-  size(displayWidth, displayHeight, P3D);
+  size(400, 600, P3D);
   background(255);
   initVideo();
+  TextToSpeech.say("Test voice hello");
   //initLeap();
 }
 
