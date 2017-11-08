@@ -10,6 +10,7 @@ Processing libraries:
   * OpenCV
   * Leap Motion for Processing
   * Processing Video
+  * Processing Sound (minim) 
 
 ### Doors
 
