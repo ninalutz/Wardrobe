@@ -1,18 +1,18 @@
 
 void setup() {
   size(displayWidth, displayHeight, P3D);
-  initVideo();
+ // initVideo();
   initLeap();
   initMirror();
   showLeap = true;
 }
 
 void draw(){
-  background(255);
+  background(20);
 
-  if(showVideo){
-    drawOpenCV();
-  }
+//  if(showVideo){
+//    drawOpenCV();
+//  }
   if(showLeap){
   drawLeap();
   }
@@ -20,10 +20,7 @@ void draw(){
     fill(#00ff00);
     text(frameRate, 10, 20);
   }
-  if(showAlarm){
-    drawAlarm();
-  }
-
+  
 }
 
 

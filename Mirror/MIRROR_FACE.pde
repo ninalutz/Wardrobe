@@ -1,18 +1,49 @@
 boolean showAlarm;
 WaveViz alarmWaves;
 
+import ddf.minim.*;
+
+AudioPlayer player;
+Minim minim; //audio context
+
 void initMirror(){
-   // TextToSpeech.say("GOOD MORNING! It's time to wake up!", voiceSpeed);
+    TextToSpeech.say("GOOD MORNING! It's time to wake up!", voiceSpeed);
+    delay(2000);
     showAlarm = true;
     alarmWaves = new WaveViz();
+    
+    minim = new Minim(this);
+    player = minim.loadFile("iwanna.mp3", 2048);
 }
 
+void stop()
+{
+  player.close();
+  minim.stop();
+}
 
-void drawAlarm(){
-    alarmWaves.draw();
+void yesNo(int state){
+  if(state == 1){
+    
   }
-  
-
+}
+int c;
+void drawAlarm(){
+    colorMode(HSB);
+    if (c >= 255)  c=0;  else  c++;
+      background(c, 255, 255);
+      
+    alarmWaves.draw();
+    player.play();
+    
+    fill(0,0,0);
+    textSize(100);
+    textAlign(CENTER, CENTER);
+    text("Swipe any way \n to stop alarm", width/2, height/2);
+    
+    
+    
+  }
 
 class WaveViz{
   

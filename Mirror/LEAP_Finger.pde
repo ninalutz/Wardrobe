@@ -13,7 +13,6 @@ import de.voidplus.leapmotion.*;
 //  10. ScreenTap Gesture
 // ======================================================
 
-
 LeapMotion leap;
 
 void initLeap(){
@@ -43,6 +42,7 @@ void leapOnExit() {
 void drawLeap() {
   // ...
   int fps = leap.getFrameRate();
+
   
   for (Hand hand : leap.getHands ()) {
 
@@ -207,7 +207,11 @@ void drawLeap() {
   
   // --------------------------------------------------
   //7. Drawing
-    hand.draw();
+    stroke(#00ff00);
+    if(hand.getOutstretchedFingers().size() > 1){
+      hand.draw();
+    }
+    
     if(hand.getOutstretchedFingers().size() == 1 ){
       fill(#00ff00);
       PVector loc = hand.getOutstretchedFingers().get(0).getPositionOfJointTip();
@@ -250,6 +254,15 @@ void leapOnSwipeGesture(SwipeGesture g, int state){
     case 3: // Stop
       println("SwipeGesture: " + id);
       break;
+  }
+  
+  if(showAlarm){
+    showAlarm = false;
+    stop();
+     colorMode(RGB);
+     textSize(12);
+     TextToSpeech.say("Good morning Nina, would you like to see your calendar?", voiceSpeed);
+     yesNo(1);
   }
 }
 
