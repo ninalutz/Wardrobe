@@ -1,20 +1,28 @@
+
 void setup() {
-  size(400, 600, P3D);
-  background(255);
+  size(displayWidth, displayHeight, P3D);
   initVideo();
-  TextToSpeech.say("Hello Nina.", voiceSpeed);
-  //initLeap();
+  initLeap();
+  initMirror();
 }
 
 void draw(){
-  //background(255);
-  //drawVideo();
-  //drawLeap();
-  drawOpenCV();
+  background(10);
+
+  if(showVideo){
+    drawOpenCV();
+  }
+  if(showLeap){
+  drawLeap();
+  }
   if(showFrameRate){
     fill(#00ff00);
     text(frameRate, 10, 20);
   }
+  if(showAlarm){
+    drawAlarm();
+  }
+
 }
 
 
