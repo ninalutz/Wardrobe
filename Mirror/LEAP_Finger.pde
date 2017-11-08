@@ -208,11 +208,11 @@ void drawLeap() {
   // --------------------------------------------------
   //7. Drawing
     stroke(#00ff00);
-    if(hand.getOutstretchedFingers().size() > 1){
+    if(hand.getOutstretchedFingers().size() > 1 && showAlarm){
       hand.draw();
     }
     
-    if(hand.getOutstretchedFingers().size() == 1 ){
+    if(hand.getOutstretchedFingers().size() == 1 && showAlarm){
       fill(#00ff00);
       PVector loc = hand.getOutstretchedFingers().get(0).getPositionOfJointTip();
       ellipse(loc.x, loc.y, 10, 10);
@@ -259,10 +259,10 @@ void leapOnSwipeGesture(SwipeGesture g, int state){
   if(showAlarm){
     showAlarm = false;
     stop();
-     colorMode(RGB);
-     textSize(12);
-     TextToSpeech.say("Good morning Nina, would you like to see your calendar?", voiceSpeed);
-     yesNo(1);
+    colorMode(RGB);
+    textSize(12);
+    TextToSpeech.say("Good morning Nina. The first thing on your calendar is 6.S063 Presentation. May I suggest something comfortable...like the shirt in the drawer?", voiceSpeed);
+    myPort.write('1');
   }
 }
 
