@@ -4,11 +4,12 @@ This repository holds the software for an assistive wardrobe built by Nina Lutz 
 
 ## Software Required
 ### Mirror
-\nProcessing 2.2.1
-\nProcessing libraries:
-..* OpenCV
-..* Leap Motion for Processing
-..* Processing Video
+Processing 2.2.1
+
+Processing libraries:
+  * OpenCV
+  * Leap Motion for Processing
+  * Processing Video
 
 ### Doors
 
