@@ -28,7 +28,7 @@ class WaveViz{
     translate(width/2, height/3);
     angle=0;
     for (int i=0; i<num; i++) {
-      stroke(255);
+      stroke(255, 0, 0);
       noFill();
       sz = i*step;
       float offSet = TWO_PI/num*i;

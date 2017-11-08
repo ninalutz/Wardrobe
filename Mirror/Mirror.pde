@@ -4,10 +4,11 @@ void setup() {
   initVideo();
   initLeap();
   initMirror();
+  showLeap = true;
 }
 
 void draw(){
-  background(10);
+  background(255);
 
   if(showVideo){
     drawOpenCV();

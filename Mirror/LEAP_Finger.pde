@@ -1,21 +1,23 @@
 import de.voidplus.leapmotion.*;
 
 // ======================================================
-// Table of Contents:
-// ├─ 1. Callbacks
-// ├─ 2. Hand
-// ├─ 3. Arms
-// ├─ 4. Fingers
-// ├─ 5. Bones
-// ├─ 6. Tools
-// └─ 7. Devices
+//  1. Callbacks
+//  2. Hand
+//  3. Arms
+//  4. Fingers
+//  5. Bones
+//  6. Tools
+//  7. Drawing
+//  8. Devices
+//  9. Swipe Gesture
+//  10. ScreenTap Gesture
 // ======================================================
 
 
 LeapMotion leap;
 
 void initLeap(){
-   leap = new LeapMotion(this);
+  leap = new LeapMotion(this).allowGestures(); 
 }
 
 // ======================================================
@@ -41,6 +43,7 @@ void leapOnExit() {
 void drawLeap() {
   // ...
   int fps = leap.getFrameRate();
+  
   for (Hand hand : leap.getHands ()) {
 
 
@@ -62,11 +65,6 @@ void drawLeap() {
     float   handTime           = hand.getTimeVisible();
     PVector spherePosition     = hand.getSpherePosition();
     float   sphereRadius       = hand.getSphereRadius();
-
-    // --------------------------------------------------
-    // Drawing
-    hand.draw();
-
 
     // ==================================================
     // 3. Arm
@@ -102,6 +100,7 @@ void drawLeap() {
     // or                        hand.getFinger("pinky");
     // or                        hand.getFinger(4);
 
+   
 
     for (Finger finger : hand.getFingers()) {
       // or              hand.getOutstretchedFingers();
@@ -114,13 +113,6 @@ void drawLeap() {
       PVector fingerDirection  = finger.getDirection();
       float   fingerTime       = finger.getTimeVisible();
 
-      // ------------------------------------------------
-      // Drawing
-
-      // Drawing:
-      // finger.draw();  // Executes drawBones() and drawJoints()
-      // finger.drawBones();
-      // finger.drawJoints();
 
       // ------------------------------------------------
       // Selection
@@ -196,10 +188,6 @@ void drawLeap() {
       float   toolTime         = tool.getTimeVisible();
 
       // ------------------------------------------------
-      // Drawing:
-      // tool.draw();
-
-      // ------------------------------------------------
       // Touch emulation
 
       int     touchZone        = tool.getTouchZone();
@@ -216,15 +204,68 @@ void drawLeap() {
         break;
       }
     }
+  
+  // --------------------------------------------------
+  //7. Drawing
+    hand.draw();
+    if(hand.getOutstretchedFingers().size() == 1 ){
+      fill(#00ff00);
+      PVector loc = hand.getOutstretchedFingers().get(0).getPositionOfJointTip();
+      ellipse(loc.x, loc.y, 10, 10);
+    }
   }
 
 
   // ====================================================
-  // 7. Devices
+  // 8. Devices
 
   for (Device device : leap.getDevices()) {
     float deviceHorizontalViewAngle = device.getHorizontalViewAngle();
     float deviceVericalViewAngle = device.getVerticalViewAngle();
     float deviceRange = device.getRange();
   }
+ 
 }
+
+
+
+// ======================================================
+// 9. Swipe Gesture
+
+void leapOnSwipeGesture(SwipeGesture g, int state){
+  int     id               = g.getId();
+  Finger  finger           = g.getFinger();
+  PVector position         = g.getPosition();
+  PVector positionStart    = g.getStartPosition();
+  PVector direction        = g.getDirection();
+  float   speed            = g.getSpeed();
+  long    duration         = g.getDuration();
+  float   durationSeconds  = g.getDurationInSeconds();
+
+  switch(state){
+    case 1: // Start
+      break;
+    case 2: // Update
+      break;
+    case 3: // Stop
+      println("SwipeGesture: " + id);
+      break;
+  }
+}
+
+
+// ======================================================
+// 10. Screen Tap Gesture
+
+void leapOnScreenTapGesture(ScreenTapGesture g){
+  int     id               = g.getId();
+  Finger  finger           = g.getFinger();
+  PVector position         = g.getPosition();
+  PVector direction        = g.getDirection();
+  long    duration         = g.getDuration();
+  float   durationSeconds  = g.getDurationInSeconds();
+
+  println("ScreenTapGesture: " + id);
+}
+
+
