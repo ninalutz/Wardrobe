@@ -9,7 +9,7 @@ CRGB leds[NUM_LEDS];
 CRGBPalette16 currentPalette;
 TBlendType    currentBlending;
 char val; // Data received from the serial port
-boolean doLights = false;
+boolean drawerTrigger = false;
 
 void setup() {
     delay( 3000 ); // power-up safety delay
@@ -21,26 +21,6 @@ void setup() {
     Serial.println("STARTED");
 }
 
-
-void loop()
-{   val = Serial.read();
-    Serial.println(val);  
-    static uint8_t startIndex = 0;
-    startIndex = startIndex + 1; /* motion speed */
-
-    if(doLights){
-    FillLEDsFromPaletteColors( startIndex);
-    FastLED.show();
-    FastLED.delay(1000 / UPDATES_PER_SECOND);
-    }
-
-   if (val == '1') {
-      doLights = true;
-   }
-   delay(10);
-
-}
-
 void FillLEDsFromPaletteColors( uint8_t colorIndex)
 {
     uint8_t brightness = 255;
@@ -50,4 +30,25 @@ void FillLEDsFromPaletteColors( uint8_t colorIndex)
         colorIndex += 3;
     }
 }
+
+
+void loop()
+{   val = Serial.read();
+    Serial.println(val);  
+    static uint8_t startIndex = 0;
+    startIndex = startIndex + 1; /* motion speed */
+
+    if(drawerTrigger){
+      FillLEDsFromPaletteColors( startIndex);
+      FastLED.show();
+      FastLED.delay(1000 / UPDATES_PER_SECOND);
+    }
+
+   if (val == '1') {
+      drawerTrigger = true;
+   }
+   delay(10);
+
+}
+
 
