@@ -27,12 +27,12 @@ void yesNo(int state){
     
   }
 }
-int c;
+int cWave;
 
 void drawAlarm(){
     colorMode(HSB);
-    if (c >= 255)  c=0;  else  c++;
-      background(c, 255, 255);
+    if (cWave >= 255)  cWave=0;  else  cWave++;
+      background(cWave, 255, 255);
       
     alarmWaves.draw();
     player.play();

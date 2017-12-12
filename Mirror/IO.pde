@@ -1,4 +1,4 @@
-boolean showFrameRate, showLeap, showVideo;
+boolean showFrameRate;
 int voiceIndex = 0;
 
 import processing.serial.*;
@@ -9,9 +9,6 @@ void keyPressed(){
     case 'f':
       //toggle printing frameRate to screen
       showFrameRate = !showFrameRate;
-      break;
-    case 'l':
-      showLeap = !showLeap;
       break;
   }
 }

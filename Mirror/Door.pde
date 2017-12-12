@@ -8,7 +8,6 @@ void initDoor(){
   // located on the fourth row, above one of the ground pins
 }
 
-
 void moveDoorLeft(int steps, int speed){
     float angle = -360*steps;
     servo.write(angle);

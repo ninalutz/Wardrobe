@@ -2,17 +2,11 @@ import http.requests.*;
 
 void setup() {
   size(displayWidth, displayHeight, P3D);
-  initLeap();
   initMirror();
-  showLeap = true;
 }
 
 void draw(){
    background(100);
-   
-  if(showLeap){
-    drawLeap();
-  }
   
   if(showAlarm){
     drawAlarm();
@@ -20,7 +14,6 @@ void draw(){
   
   if(!showAlarm){
     drawHomeScreen();
-    myPort.write('1');
   }
   
   if(showFrameRate){
