@@ -1,14 +1,17 @@
 import http.requests.*;
-
+boolean initialized;
 void setup() {
-  size(displayWidth, displayHeight, P3D);
+  size(600, 600, P3D);
   initConnection();
-  init();
+
 }
 
 void draw(){
    background(100);
-  
+
+   readData();
+
+   
   if(showAlarm){
     drawAlarm();
   }

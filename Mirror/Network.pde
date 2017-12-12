@@ -3,27 +3,23 @@ import processing.net.*;
 Client backend, lights;
 Server s;
 String input;
-
+String[] data;
 void initConnection(){
   backend = new Client(this, "18.111.21.136", 12345);
-  s = new Server(this, 12346);
 }
 
-void sendServer(String data){
-  s.write(data);
-}
 
-void receiveData(){
+void readData(){
   if (backend.available() > 0) { 
     input = backend.readString(); 
-  } 
-}
-
-String readClient(){
-  String input = "";
-  lights = s.available();
-  if(lights != null){
-    input = lights.readString();
+    data = split(input, ',');  // Split values into an array
   }
-  return input;
+  
+  //initialize alarm sequence
+  if(data != null && data[0].equals("Alarm") && !initialized){
+    initAlarm();
+    initialized = true;
+  }
+  
+  println(input, initialized);
 }

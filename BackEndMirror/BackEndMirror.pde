@@ -12,6 +12,7 @@ void setup(){
 
 
 void draw(){
+    initDemo();
     if(testVideo){
         testVideoFunc();
     } 
