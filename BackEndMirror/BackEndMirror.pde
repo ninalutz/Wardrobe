@@ -4,6 +4,7 @@ boolean testVideo, testOpenCV, showFrameRate, showLeap;
 
 void setup(){
     size(640, 480);
+    initServer();
     initVideo();
     initLeap();
     initDemo();

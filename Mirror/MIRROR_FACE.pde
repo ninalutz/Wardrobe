@@ -1,4 +1,4 @@
-boolean showAlarm;
+boolean showAlarm, showHome;
 WaveViz alarmWaves;
 homeAnimation homeAn;
 import ddf.minim.*;

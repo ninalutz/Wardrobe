@@ -11,10 +11,9 @@ void draw(){
   
   if(showAlarm){
     drawAlarm();
-    
   }
   
-  if(!showAlarm){
+  if(showHome){
     drawHomeScreen();
   }
   
