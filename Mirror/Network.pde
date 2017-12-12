@@ -5,7 +5,7 @@ Server s;
 String input;
 
 void initConnection(){
-  backend = new Client(this, "18.111.125.34", 12345);
+  backend = new Client(this, "18.111.21.136", 12345);
   s = new Server(this, 12346);
 }
 
