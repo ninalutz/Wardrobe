@@ -16,7 +16,7 @@ import de.voidplus.leapmotion.*;
 LeapMotion leap;
 
 void initLeap(){
-  leap = new LeapMotion(this).allowGestures(); 
+  leap = new LeapMotion(this).allowGestures();
 }
 
 // ======================================================
@@ -43,7 +43,7 @@ void drawLeap() {
   // ...
   int fps = leap.getFrameRate();
 
-  
+
   for (Hand hand : leap.getHands ()) {
 
 
@@ -100,7 +100,7 @@ void drawLeap() {
     // or                        hand.getFinger("pinky");
     // or                        hand.getFinger(4);
 
-   
+
 
     for (Finger finger : hand.getFingers()) {
       // or              hand.getOutstretchedFingers();
@@ -204,14 +204,14 @@ void drawLeap() {
         break;
       }
     }
-  
+
   // --------------------------------------------------
   //7. Drawing
     stroke(#00ff00);
     if(hand.getOutstretchedFingers().size() > 1 && showAlarm){
       hand.draw();
     }
-    
+
     if(hand.getOutstretchedFingers().size() == 1 && showAlarm){
       fill(#00ff00);
       PVector loc = hand.getOutstretchedFingers().get(0).getPositionOfJointTip();
@@ -228,7 +228,7 @@ void drawLeap() {
     float deviceVericalViewAngle = device.getVerticalViewAngle();
     float deviceRange = device.getRange();
   }
- 
+
 }
 
 
@@ -255,7 +255,7 @@ void leapOnSwipeGesture(SwipeGesture g, int state){
       println("SwipeGesture: " + id);
       break;
   }
-  
+
   if(showAlarm){
     showAlarm = false;
     stop();
@@ -280,5 +280,3 @@ void leapOnScreenTapGesture(ScreenTapGesture g){
 
   println("ScreenTapGesture: " + id);
 }
-
-

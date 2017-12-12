@@ -7,6 +7,7 @@ static class TextToSpeech extends Object {
   // male voices
   static final String ALEX = "Alex";
   static final String FRED = "Fred";
+  static final String defaultVoice = ALEX;
 
   // female voices
   static final String VICTORIA = "Victoria";
@@ -24,8 +25,7 @@ static class TextToSpeech extends Object {
 
   // Overload the say method so we can call it with fewer arguments and basic defaults
    static void say(String script, int speed) {
-    // 200 seems like a resonable default speed
-    say(script,FRED,speed);
+    say(script,defaultVoice,speed);
   }
 
 }

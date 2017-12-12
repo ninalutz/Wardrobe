@@ -1,21 +1,21 @@
-import processing.video.*; 
+import processing.video.*;
 import gab.opencv.*;
 import java.awt.Rectangle;
 
-Capture cam; 
+Capture cam;
 OpenCV opencv;
 Rectangle[] faces;
 
 void initVideo(){
   cam = new Capture(this, width, height);
   opencv = new OpenCV(this, width, height);
-  opencv.loadCascade(OpenCV.CASCADE_FRONTALFACE);  
+  opencv.loadCascade(OpenCV.CASCADE_FRONTALFACE);
   faces = opencv.detect();
-  cam.start(); 
+  cam.start();
 
 }
 
-void drawOpenCV(){  
+void drawOpenCV(){
   image(cam, 0, 0 );
   noFill();
   stroke(0, 255, 0);

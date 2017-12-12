@@ -33,7 +33,7 @@ class Button{
         clicked = true;
       }
     }
-    
+
     void draw(){
         fill(buttonFill, 200);
 
@@ -59,4 +59,3 @@ class Button{
         clicked = false;
     }
 }
-
