@@ -248,7 +248,7 @@ void leapOnSwipeGesture(SwipeGesture g, int state){
 
   switch(state){
     case 1: // Start
-      break;
+      break; 
     case 2: // Update
       break;
     case 3: // Stop

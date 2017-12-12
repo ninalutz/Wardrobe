@@ -1,4 +1,3 @@
-
 import http.requests.*;
 
 //imports the needed Java classes that Processing doesn't have natively, as we want to avoid using the net library and just do a basic HTTP request 
@@ -69,6 +68,4 @@ void requestProcess(String link){
    GetRequest get = new GetRequest(link);
    get.send();
    output = get.getContent();
-   blok = parseJSONObject(output);
-   println(blok);
 }
