@@ -6,6 +6,7 @@ void setup(){
     size(640, 480);
     initVideo();
     initLeap();
+    initDemo();
 }
 
 

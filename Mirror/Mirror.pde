@@ -2,7 +2,8 @@ import http.requests.*;
 
 void setup() {
   size(displayWidth, displayHeight, P3D);
-  initMirror();
+  initConnection();
+  init();
 }
 
 void draw(){
@@ -10,6 +11,7 @@ void draw(){
   
   if(showAlarm){
     drawAlarm();
+    
   }
   
   if(!showAlarm){

@@ -208,15 +208,7 @@ void drawLeap() {
   // --------------------------------------------------
   //7. Drawing
     stroke(#00ff00);
-    if(hand.getOutstretchedFingers().size() > 1 && showAlarm){
-      hand.draw();
-    }
-
-    if(hand.getOutstretchedFingers().size() == 1 && showAlarm){
-      fill(#00ff00);
-      PVector loc = hand.getOutstretchedFingers().get(0).getPositionOfJointTip();
-      ellipse(loc.x, loc.y, 10, 10);
-    }
+    hand.draw();
   }
 
 
