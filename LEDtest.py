@@ -8,7 +8,7 @@ import Adafruit_GPIO.SPI as SPI
  
  
 # Configure the count of pixels:
-PIXEL_COUNT = 32
+PIXEL_COUNT = 200
  
 # Alternatively specify a hardware SPI connection on /dev/spidev0.0:
 SPI_PORT   = 0
@@ -37,10 +37,12 @@ def rainbow_cycle_successive(pixels, wait=0.1):
         # (thats the i / strip.numPixels() part)
         # Then add in j which makes the colors go around per pixel
         # the % 96 is to make the wheel cycle around
-        pixels.set_pixel(i, Adafruit_WS2801.RGB_to_color(255, 0, 0))
+        pixels.set_pixel(i, Adafruit_WS2801.RGB_to_color(0, 255, 0))
         pixels.show()
+        """
         if wait > 0:
             time.sleep(wait)
+        """
  
 def rainbow_cycle(pixels, wait=0.005):
     for j in range(256): # one cycle of all 256 colors in the wheel
