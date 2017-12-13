@@ -29,6 +29,8 @@ void readData(){
     showHome = true;
     player.close();
     minim.stop();
+    //Say the proper thing from original data stream
+    //
   }
   
 
