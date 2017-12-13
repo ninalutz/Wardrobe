@@ -22,7 +22,7 @@ void draw(){
     drawLeap();
     if(testVideo){
         testVideoFunc();
-    } 
+    }  
     
     if(testOpenCV){
         testOpenCVFunc();
