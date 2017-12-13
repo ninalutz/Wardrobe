@@ -33,4 +33,4 @@ if __name__ == "__main__":
 
     pixels.show()  # Make sure to call show() after changing any pixels!
 
-       print("GOODBYE")
+    print("GOODBYE")
