@@ -97,6 +97,7 @@ def appear_from_back(pixels, color=(255, 0, 0)):
 
 if __name__ == "__main__":
     # Clear all the pixels to turn them off.
+    print("HELLO")
     pixels.clear()
     pixels.show()  # Make sure to call show() after changing any pixels!
 
@@ -115,3 +116,5 @@ if __name__ == "__main__":
     rainbow_colors(pixels)
 
     brightness_decrease(pixels)
+
+    print("GOODBYE")
