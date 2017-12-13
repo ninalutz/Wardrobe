@@ -42,7 +42,8 @@ void leapOnExit() {
 void drawLeap() {
   // ...
   int fps = leap.getFrameRate();
-
+  
+  toSend = "Alarm,6.S063 Presentation at 1pm,clear and 24 degrees,Button Down,location";
 
   for (Hand hand : leap.getHands ()) {
 
@@ -265,4 +266,5 @@ void leapOnScreenTapGesture(ScreenTapGesture g){
   float   durationSeconds  = g.getDurationInSeconds();
 
   println("ScreenTapGesture: " + id);
+  toSend = "screenTap," + position.x + "," + position.y;
 }

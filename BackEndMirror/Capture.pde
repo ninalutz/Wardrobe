@@ -22,7 +22,7 @@ OpenCV opencv;
 void initVideo(){
    // This the default video input, see the GettingStartedCapture 
   // example if it creates an error
-
+  
   video = new Capture(this, width, height);
   opencv = new OpenCV(this, width, height);
   contours = new ArrayList<Contour>();

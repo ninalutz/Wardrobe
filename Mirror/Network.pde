@@ -48,5 +48,10 @@ void readData(){
     alarmClosed = true;
   }
   
-
+  if(alarmClosed == true && data[0].equals("swipe")){
+    println("DOOR MOVE WITH SWIPE");
+    moveDoor();
+    println("DOOR MOVE WITH SWIPE");
+  }
+  
 }

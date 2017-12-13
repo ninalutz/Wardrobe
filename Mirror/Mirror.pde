@@ -1,18 +1,17 @@
 import http.requests.*;
+
 boolean initialized, alarmClosed;
 void setup() {
   size(600, 600, P3D);
   initFace();
-  //initDoor();
+  initDoor();
   initConnection();
   println("SET UP DONE");
 }
 
 void draw(){
    background(100);
-
    readData();
-
    
   if(showAlarm){
     drawAlarm();
