@@ -8,7 +8,7 @@ import Adafruit_GPIO.SPI as SPI
 
 
 # Configure the count of pixels:
-PIXEL_COUNT = 32
+PIXEL_COUNT = 300
 
 # Alternatively specify a hardware SPI connection on /dev/spidev0.0:
 SPI_PORT   = 0
@@ -111,8 +111,6 @@ if __name__ == "__main__":
         blink_color(pixels, blink_times = 1, color=(255, 0, 0))
         blink_color(pixels, blink_times = 1, color=(0, 255, 0))
         blink_color(pixels, blink_times = 1, color=(0, 0, 255))
-
-
 
     rainbow_colors(pixels)
 
