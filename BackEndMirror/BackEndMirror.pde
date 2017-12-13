@@ -13,7 +13,10 @@ void setup(){
 
 
 void draw(){
+  if(!testVideo && !testOpenCV){
     background(255);
+  }
+    
     sendtoDemo();
     drawLeap();
     if(testVideo){
