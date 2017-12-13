@@ -8,7 +8,7 @@ import Adafruit_GPIO.SPI as SPI
 
 
 # Configure the count of pixels:
-PIXEL_COUNT = 200
+PIXEL_COUNT = 20
 
 # Alternatively specify a hardware SPI connection on /dev/spidev0.0:
 SPI_PORT   = 0
@@ -17,14 +17,6 @@ pixels = Adafruit_WS2801.WS2801Pixels(PIXEL_COUNT, spi=SPI.SpiDev(SPI_PORT, SPI_
 
 def wheel(pos):
 	return Adafruit_WS2801.RGB_to_color(255, 255, 255)
-    # if pos < 85:
-    #     return Adafruit_WS2801.RGB_to_color(pos * 3, 255 - pos * 3, 0)
-    # elif pos < 170:
-    #     pos -= 85
-    #     return Adafruit_WS2801.RGB_to_color(255 - pos * 3, 0, pos * 3)
-    # else:
-    #     pos -= 170
-    #     return Adafruit_WS2801.RGB_to_color(0, pos * 3, 255 - pos * 3)
 
 # Define rainbow cycle function to do a cycle of all hues.
 def rainbow_cycle_successive(pixels):
@@ -39,5 +31,4 @@ if __name__ == "__main__":
     pixels.show()  # Make sure to call show() after changing any pixels!
 
     rainbow_cycle_successive(pixels)
-
     print("GOODBYE")
