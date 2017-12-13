@@ -22,7 +22,6 @@ void draw(){
     drawHomeScreen();
   }
   
-  
   if(showFrameRate){
     fill(#00ff00);
     text(frameRate, 10, 20);

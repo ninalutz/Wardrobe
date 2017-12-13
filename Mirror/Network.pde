@@ -6,7 +6,7 @@ String input;
 String[] data;
 
 void initConnection(){
-  backend = new Client(this, "18.111.78.34", 12345);
+  backend = new Client(this, "18.111.2.203", 12345);
 }
 
 String alarmInfo;
@@ -39,8 +39,8 @@ void readData(){
      TextToSpeech.say("Good morning Bryan! The first thing on your calendar is " + alarmArray[1]
      + " and it's currently " + alarmArray[2] + "may I recommend you wear your " + alarmArray[3], voiceSpeed);
  
-    //Do the door 
-    moveDoor(alarmArray[4]);
+    //Move the door 
+    moveDoor();
     
     //Do the lights
     cueLights(alarmArray[4]);

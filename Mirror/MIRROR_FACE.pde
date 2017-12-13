@@ -15,6 +15,7 @@ void initFace(){
 
 void initAlarm(){
     TextToSpeech.say("GOOD MORNING! It's time to wake up!", voiceSpeed);
+    initDoor();
     delay(2000);
     showAlarm = true;
 }

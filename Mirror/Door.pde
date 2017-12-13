@@ -8,18 +8,13 @@ void initDoor(){
   // located on the fourth row, above one of the ground pins
 }
 
-void moveDoor(String pos){
-  //based on position do the left or right motion
+void moveDoor(){
+    moveDoorLeft(150);
+    delay(3000);
+    moveDoorLeft(30);
+    delay(3000);
 }
 
-void moveDoorLeft(int steps, int speed){
-    float angle = -360*steps;
-    servo.write(angle);
-    delay(speed);
-}
-
-void moveDoorRight(int steps, int speed){
-    float angle = 360*steps;
-    servo.write(angle); 
-    delay(speed);
+void moveDoorLeft(int speed){
+    servo.write(speed);
 }
