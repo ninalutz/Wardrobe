@@ -10,7 +10,7 @@ import processing.serial.*;
 Serial myPort;  // Create object from Serial class
 
 void initConnection(){
-  backend = new Client(this, "18.111.11.184", 12345);
+  backend = new Client(this, "18.111.85.238", 12345);
   
   String portName = Serial.list()[2]; //change the 0 to a 1 or 2 etc. to match your port
   myPort = new Serial(this, portName, 57600);
