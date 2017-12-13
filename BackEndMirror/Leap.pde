@@ -167,10 +167,11 @@ void drawLeap() {
       case -1: // None
         break;
       case 0: // Hovering
-        // println("Hovering (#" + fingerId + "): " + touchDistance);
+       // println("Hovering (#" + fingerId + "): " + touchDistance);
         break;
       case 1: // Touching
-        // println("Touching (#" + fingerId + ")");
+        //println("Touching (#" + fingerId + ")");
+        
         break;
       }
     }
@@ -197,10 +198,10 @@ void drawLeap() {
       case -1: // None
         break;
       case 0: // Hovering
-        // println("Hovering (#" + toolId + "): " + touchDistance);
+         println("Hovering (#" + toolId + "): " + touchDistance);
         break;
       case 1: // Touching
-        // println("Touching (#" + toolId + ")");
+         println("Touching (#" + toolId + ")");
         break;
       }
     }
@@ -245,6 +246,7 @@ void leapOnSwipeGesture(SwipeGesture g, int state){
       break;
     case 3: // Stop
       println("SwipeGesture: " + id);
+      toSend = "swipe";
       break;
   }
 

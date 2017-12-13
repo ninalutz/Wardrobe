@@ -6,14 +6,17 @@ import ddf.minim.*;
 AudioPlayer player;
 Minim minim; //audio context
 
-void initAlarm(){
-    TextToSpeech.say("GOOD MORNING! It's time to wake up!", voiceSpeed);
-    delay(2000);
-    showAlarm = true;
+void initFace(){
     alarmWaves = new WaveViz();
     homeAn = new homeAnimation();
     minim = new Minim(this);
     player = minim.loadFile("iwanna.mp3", 2048);
+}
+
+void initAlarm(){
+    TextToSpeech.say("GOOD MORNING! It's time to wake up!", voiceSpeed);
+    delay(2000);
+    showAlarm = true;
 }
 
 void stop()
@@ -22,11 +25,7 @@ void stop()
   minim.stop();
 }
 
-void yesNo(int state){
-  if(state == 1){
-    
-  }
-}
+
 int cWave;
 
 void drawAlarm(){

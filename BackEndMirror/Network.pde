@@ -12,5 +12,5 @@ void initServer(){
 
 void sendServer(String data){
   s.write(data);
-  println(data);
+  println("Sending: ", data);
 }

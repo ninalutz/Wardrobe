@@ -7,12 +7,15 @@ void setup(){
     initServer();
     initVideo();
     initLeap();
-    initDemo();
+    toSend = "Alarm,6.S063 Presentation,Weather,ButtonDown";
+    sendtoDemo();
 }
 
 
 void draw(){
-    initDemo();
+  background(255);
+    sendtoDemo();
+    drawLeap();
     if(testVideo){
         testVideoFunc();
     } 
@@ -26,8 +29,5 @@ void draw(){
         text(frameRate, 50, 50);
     }
       
-    if(showLeap){
-        drawLeap();
-    }
  
 }

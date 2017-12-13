@@ -2,8 +2,9 @@ import http.requests.*;
 boolean initialized;
 void setup() {
   size(600, 600, P3D);
+  initFace();
   initConnection();
-
+  println("SET UP DONE");
 }
 
 void draw(){
