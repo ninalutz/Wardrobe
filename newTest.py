@@ -15,6 +15,16 @@ SPI_PORT   = 0
 SPI_DEVICE = 0
 pixels = Adafruit_WS2801.WS2801Pixels(PIXEL_COUNT, spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE), gpio=GPIO)
 
+def wheel(pos):
+	return Adafruit_WS2801.RGB_to_color(255, 255, 255)
+    # if pos < 85:
+    #     return Adafruit_WS2801.RGB_to_color(pos * 3, 255 - pos * 3, 0)
+    # elif pos < 170:
+    #     pos -= 85
+    #     return Adafruit_WS2801.RGB_to_color(255 - pos * 3, 0, pos * 3)
+    # else:
+    #     pos -= 170
+    #     return Adafruit_WS2801.RGB_to_color(0, pos * 3, 255 - pos * 3)
 
 # Define rainbow cycle function to do a cycle of all hues.
 def rainbow_cycle_successive(pixels):
