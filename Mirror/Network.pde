@@ -11,6 +11,7 @@ void initConnection(){
 
 String alarmInfo;
 String[] alarmArray;
+
 void readData(){
   if (backend.available() > 0) { 
     input = backend.readString(); 
@@ -28,16 +29,23 @@ void readData(){
   }
   
   //turn off alarm at swipe
-  if(data != null && data[0].equals("swipe")){
+  if(data != null && data[0].equals("swipe") && !alarmClosed){
     showAlarm = false;
     showHome = true;
     player.close();
     minim.stop();
     
     //Say the proper thing from original data stream
-     TextToSpeech.say("Good morning Bryan! The first thin on your calendar is " + alarmArray[1]
-     + " and it's currently " + alarmArray[2] + "may I recommend you wear your button down?", voiceSpeed);
-    //
+     TextToSpeech.say("Good morning Bryan! The first thing on your calendar is " + alarmArray[1]
+     + " and it's currently " + alarmArray[2] + "may I recommend you wear your " + alarmArray[3], voiceSpeed);
+ 
+    //Do the door 
+    moveDoor(alarmArray[4]);
+    
+    //Do the lights
+    cueLights(alarmArray[4]);
+    
+    alarmClosed = true;
   }
   
 

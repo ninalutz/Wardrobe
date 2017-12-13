@@ -1,5 +1,5 @@
 import http.requests.*;
-boolean initialized;
+boolean initialized, alarmClosed;
 void setup() {
   size(600, 600, P3D);
   initFace();
@@ -21,6 +21,7 @@ void draw(){
   if(showHome){
     drawHomeScreen();
   }
+  
   
   if(showFrameRate){
     fill(#00ff00);
