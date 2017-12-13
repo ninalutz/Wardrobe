@@ -37,7 +37,7 @@ def rainbow_cycle_successive(pixels, wait=0.1):
         # (thats the i / strip.numPixels() part)
         # Then add in j which makes the colors go around per pixel
         # the % 96 is to make the wheel cycle around
-        pixels.set_pixel(i, wheel(((i * 256 // pixels.count())) % 256) )
+        pixels.set_pixel(i, Adafruit_WS2801.RGB_to_color(255, 0, 0))
         pixels.show()
         if wait > 0:
             time.sleep(wait)
@@ -104,6 +104,7 @@ if __name__ == "__main__":
     pixels.show()  # Make sure to call show() after changing any pixels!
  
     rainbow_cycle_successive(pixels, wait=0.1)
+    """
     rainbow_cycle(pixels, wait=0.01)
  
     brightness_decrease(pixels)
@@ -119,4 +120,5 @@ if __name__ == "__main__":
     rainbow_colors(pixels)
     
     brightness_decrease(pixels)
+    """
     
