@@ -8,10 +8,8 @@ void initDoor(){
   // located on the fourth row, above one of the ground pins
 }
 
-void moveDoorLeft(float steps, int speed){
-    float angle = 90*steps;
-    servo.write(angle);
-    delay(speed);
+void moveDoorLeft(int speed){
+    servo.write(speed);
 }
 
 void moveDoorRight(float steps, int speed){
@@ -26,7 +24,8 @@ void setup(){
 }
 
 void draw(){
-  moveDoorRight(1, 1);
-  moveDoorLeft(1, 2);
-  noLoop();
+  moveDoorLeft(150);
+  delay(3000);
+  moveDoorLeft(30);
+  delay(3000);
 }

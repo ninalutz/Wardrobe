@@ -13,7 +13,7 @@ void setup(){
 
 
 void draw(){
-  background(255);
+    background(255);
     sendtoDemo();
     drawLeap();
     if(testVideo){
@@ -28,6 +28,4 @@ void draw(){
         fill(255, 0, 0);
         text(frameRate, 50, 50);
     }
-      
- 
 }
