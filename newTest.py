@@ -28,7 +28,9 @@ if __name__ == "__main__":
     # Clear all the pixels to turn them off.
     print("HELLO")
     pixels.clear()
-    pixels.show()  # Make sure to call show() after changing any pixels!
 
     rainbow_cycle_successive(pixels)
-    print("GOODBYE")
+
+    pixels.show()  # Make sure to call show() after changing any pixels!
+
+       print("GOODBYE")
