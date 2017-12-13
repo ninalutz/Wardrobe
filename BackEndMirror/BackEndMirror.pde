@@ -7,7 +7,7 @@ void setup(){
     initServer();
     initVideo();
     initLeap();
-    toSend = "Alarm,6.S063 Presentation,Weather,ButtonDown";
+    toSend = "Alarm,6.S063 Presentation,1pm,clear and 24 degrees,ButtonDown";
     sendtoDemo();
 }
 

@@ -3,6 +3,7 @@ boolean initialized;
 void setup() {
   size(600, 600, P3D);
   initFace();
+  //initDoor();
   initConnection();
   println("SET UP DONE");
 }

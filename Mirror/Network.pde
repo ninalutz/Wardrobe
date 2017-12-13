@@ -4,11 +4,13 @@ Client backend, lights;
 Server s;
 String input;
 String[] data;
+
 void initConnection(){
-  backend = new Client(this, "18.111.54.199", 12345);
+  backend = new Client(this, "18.111.78.34", 12345);
 }
 
-
+String alarmInfo;
+String[] alarmArray;
 void readData(){
   if (backend.available() > 0) { 
     input = backend.readString(); 
@@ -20,6 +22,8 @@ void readData(){
   if(data != null && data[0].equals("Alarm") && !initialized){
     initAlarm();
     initialized = true;
+    alarmInfo = input;
+    alarmArray = data;
     println("initialized");
   }
   
@@ -29,7 +33,10 @@ void readData(){
     showHome = true;
     player.close();
     minim.stop();
+    
     //Say the proper thing from original data stream
+     TextToSpeech.say("Good morning Bryan! The first thin on your calendar is " + alarmArray[1]
+     + " and it's currently " + alarmArray[2] + "may I recommend you wear your button down?", voiceSpeed);
     //
   }
   
