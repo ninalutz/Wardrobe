@@ -46,7 +46,7 @@ void drawLeap() {
   toSend = "Alarm,6.S063 Presentation at 1pm,clear and 24 degrees,Button Down,location";
 
   for (Hand hand : leap.getHands ()) {
-
+     toSend = "swipe";
 
     // ==================================================
     // 2. Hand

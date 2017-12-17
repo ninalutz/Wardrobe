@@ -10,7 +10,7 @@ void initFace(){
     alarmWaves = new WaveViz();
     homeAn = new homeAnimation();
     minim = new Minim(this);
-    player = minim.loadFile("iwanna.mp3", 2048);
+    player = minim.loadFile("demo.mp3", 2048);
 }
 
 void initAlarm(){
@@ -21,8 +21,8 @@ void initAlarm(){
 }
 
 void stop(){
-    player.close();
-    minim.stop();
+   // player.close();
+   // minim.stop();
 }
 
 void drawAlarm(){

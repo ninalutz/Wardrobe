@@ -2,10 +2,11 @@ import http.requests.*;
 
 boolean initialized, alarmClosed;
 void setup() {
-  size(600, 600, P3D);
+  size(displayWidth, displayHeight, P3D);
+  //size(420, 680, P3D);
   initFace();
   initConnection();
-  //initDoor();
+  //initDoor( );
   //initAlarmSeq();
   println("SET UP DONE");
 }

@@ -12,7 +12,7 @@ void setup() {
   stroke(0);
   frameRate(5); // Slow it down a little
   // Connect to the server’s IP address and port­
-  c = new Client(this, "18.111.21.136", 12345); // Replace with your server’s IP and port
+  c = new Client(this, "18.111.85.238", 12345); // Replace with your server’s IP and port
 } 
 
 void draw() {         
